@@ -1,0 +1,20 @@
+# Lead routing configuration
+# Tiers are assigned by score. Reps are assigned round-robin within each tier.
+# Override via REP_POOL env var (comma-separated) to set reps at runtime.
+
+tiers:
+  hot:
+    min_score: 75
+    sla_minutes: 5        # speed-to-lead SLA for compliance reporting
+  warm:
+    min_score: 50
+    sla_minutes: 60
+  cold:
+    min_score: 0
+    sla_minutes: 1440     # 24 hours
+
+# Fallback rep pool used when REP_POOL env var is not set
+default_rep_pool:
+  - rep1@company.com
+  - rep2@company.com
+  - rep3@company.com

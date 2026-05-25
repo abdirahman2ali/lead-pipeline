@@ -1,0 +1,11 @@
+email,name,phone,company,source,industry_context
+james.morgan@acmecapital.com,James Morgan,+14165550101,Acme Capital Group,facebook_ad,business funding lender
+sarah.chen@techstartup.io,Sarah Chen,+16475550182,TechStartup Inc,google_ad,business funding lender
+mike.d@gmail.com,Mike D,,,,business funding lender
+priya.patel@retailchain.com,Priya Patel,+14165550234,Retail Chain Co,referral,business funding lender
+tom.baker@bakersupply.net,Tom Baker,+12895550312,Baker Supply Ltd,facebook_ad,business funding lender
+lisa.wu@innovatetech.ca,Lisa Wu,+16475550498,Innovate Tech,linkedin_ad,business funding lender
+carlos.m@yahoo.com,Carlos M,+14165550601,,organic,business funding lender
+jessica.lee@greenlogistics.com,Jessica Lee,+19055550723,Green Logistics Partners,google_ad,business funding lender
+ahmed.al@constructpro.ae,Ahmed Al-Farsi,+19715550814,ConstructPro LLC,linkedin_ad,business funding lender
+nancy.kim@nancysboutique.com,Nancy Kim,+14165550999,Nancy's Boutique,facebook_ad,business funding lender
