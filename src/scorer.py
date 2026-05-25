@@ -74,6 +74,7 @@ def score_lead(lead: Lead, industry_context: Optional[str] = None) -> tuple[int,
         "raw_payload": lead.raw_payload,
     })
 
+    # Haiku sufficient here: structured JSON extraction from a fixed schema, no creative reasoning needed
     response = _get_client().messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=256,
