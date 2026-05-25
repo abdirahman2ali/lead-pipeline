@@ -1,4 +1,5 @@
 import logging
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -13,9 +14,14 @@ from src import crm_sync, dedup_store, ingestor, notifier, router, scorer  # noq
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Lead Pipeline API")
 
-dedup_store.init_store()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    dedup_store.init_store()
+    yield
+
+
+app = FastAPI(title="Lead Pipeline API", lifespan=lifespan)
 
 
 class LeadRequest(BaseModel):

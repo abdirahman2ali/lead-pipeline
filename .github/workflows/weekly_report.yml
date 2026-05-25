@@ -27,3 +27,13 @@ jobs:
           ALERT_RECIPIENT: ${{ secrets.ALERT_RECIPIENT }}
           INDUSTRY_CONTEXT: ${{ secrets.INDUSTRY_CONTEXT }}
         run: python main.py --mode report
+
+  investigate-on-failure:
+    needs: [report]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger CI investigator
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: gh workflow run watcher.yml --repo abdirahman2ali/ci-investigator
